@@ -60,3 +60,14 @@ Route::post('/categorie/save', [CategorieController::class, 'save'])->name('cate
 
 Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+
+// Route::get('/invoice/{id}',function($id){
+//     $invoice = App\Models\Invoice::findOrFail($id);
+//     return dd($invoice->products);
+// });
+
+use App\Http\Controllers\InvoiceController;
+Route::get('/invoices', [InvoiceController::class, 'show'])->name('invoices');
+Route::get('/invoice/form', [InvoiceController::class, 'form'])->name('invoice.form');
+Route::post('/invoice/save', [InvoiceController::class, 'save'])->name('invoice.save');

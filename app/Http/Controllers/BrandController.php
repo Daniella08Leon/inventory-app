@@ -7,7 +7,7 @@ use App\Models\Brand;
 
 class BrandController extends Controller
 {
-    function __construct(){
+    function __construct(){ 
         $this->middleware('auth');
     }
     function show(){
